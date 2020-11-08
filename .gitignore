@@ -1,0 +1,5 @@
+.vs/
+x64/
+Snake/x64/
+Snake/Snake.vcxproj.user
+Snake/vcxproj.filters
