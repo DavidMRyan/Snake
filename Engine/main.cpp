@@ -3,12 +3,16 @@
 
 #include <Windows.h>
 #include "graphics.hpp";
+#include <cstdio>
 
 Graphics* pGraphics = new Graphics();
 RECT clientRect{ 0, 0, 800, 600 };
 
 LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ WPARAM wParam, _In_ LPARAM lParam)
 {
+	AllocConsole();
+	freopen_s((FILE**)stdout, "CONOUT$", "w", stdout);
+
 	switch (uMsg)
 	{
 		case WM_DESTROY:
@@ -17,12 +21,12 @@ LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ WPARAM wParam, 
 			break;
 
 		case WM_PAINT:
-			pGraphics->BeginDraw();
-			pGraphics->ClearScreen(0.0f, 0.0f, 0.0f);
+			/*pGraphics->BeginDraw();
+			pGraphics->ClearScreen(0.0f, 0.0f, 0.0f);*/
 
 			// ------------ Grid ------------
 			// Grid is just for testing and debugging!
-			for (int x = 0; x < clientRect.right; x += 20)
+			/*for (int x = 0; x < clientRect.right; x += 20)
 			{
 				pGraphics->DrawLine(
 					D2D1::Point2F(x, clientRect.top),
@@ -44,10 +48,10 @@ LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT uMsg, _In_ WPARAM wParam, 
 					1.0f,
 					1.0f
 				);
-			}
+			}*/
 			// ------------ End Grid ------------
 			
-			pGraphics->EndDraw();
+			//pGraphics->EndDraw();
 			break;
 	}
 

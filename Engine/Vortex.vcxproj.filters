@@ -29,5 +29,8 @@
     <ClInclude Include="graphics.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="shared.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
